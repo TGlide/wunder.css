@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <title>Wunder.css</title>
+  </head>
+  <body class="bg-dark text-white">
+    <div
+      class="container d-flex flex-column bg-dark text-white vh-100"
+      id="hero"
+    >
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+          <img
+            class="img-fluid"
+            src="assets/logo-alt.png"
+            alt="Wunder.css"
+            width="150"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                <i class="bi-house"></i> Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="featured.html"
+                ><i class="bi-patch-check"></i> Featured</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html"
+                ><i class="bi-three-dots"></i> About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><i class="bi-mailbox"></i> Contact us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div
+        class="flex-fill d-flex flex-column justify-content-center align-items-center"
+      >
+        <div class="d-flex flex-column flex-fill"></div>
+        <h1 class="fs-1 fw-regular text-center">
+          Discover <span class="text-danger fw-bold">wunderful</span> web
+          components made with pure
+          <span class="text-info fw-lighter">CSS</span>
+        </h1>
+        <div class="d-flex flex-column flex-fill"></div>
+
+        <button type="button" class="btn btn-danger p-0 mb-4 text-white">
+          <a href="#projects" class="d-block text-white px-2 py-1">
+            <i class="bi-arrow-down"></i>
+          </a>
+        </button>
+      </div>
+    </div>
+
+    <div class="container pb-5" id="projects">
+      <h2 class="fs-2 mt-5 mb-4">Projects</h2>
+      <div class="row">
+        <div class="col">
+          <div class="card bg-dark text-white shadow-lg">
+            <img
+              src="assets/projects/ox.webp"
+              class="card-img-top"
+              alt="..."
+              height="240"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Year of the Ox</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Jack</h6>
+              <a
+                href="https://codepen.io/jackwatson05/pen/poNRVmN"
+                class="card-link text-info"
+                target="_blank"
+                >Check it out!</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark text-white shadow-lg">
+            <img
+              src="assets/projects/button.webp"
+              class="card-img-top"
+              alt="..."
+              height="240"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Animated ghost button</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Arsen Zbidniakov</h6>
+              <a
+                href="https://codepen.io/ARS/pen/vEwEPP"
+                class="card-link text-info"
+                target="_blank"
+                >Check it out!</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-dark text-white shadow-lg">
+            <img
+              src="assets/projects/tictactoe.png"
+              class="card-img-top"
+              alt="..."
+              height="240"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Tic-Tac-Toe</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Žiga Miklič</h6>
+              <a
+                href="https://codepen.io/ziga-miklic/pen/Fagmh"
+                class="card-link text-info"
+                target="_blank"
+                >Check it out!</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="fs-3 text-center mt-4">More projects coming soon!</p>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
