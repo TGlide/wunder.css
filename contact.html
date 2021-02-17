@@ -106,9 +106,28 @@
                     rows="5"
                   ></textarea>
                 </div>
-                <button type="submit" class="btn btn-danger text-white">
+                <button
+                  type="button"
+                  class="btn btn-danger text-white"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseExample"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                >
                   Submit
                 </button>
+
+                <div class="collapse mt-4" id="collapseExample">
+                  <div class="card card-body bg-dark border-white">
+                    Our email servers are currently down. Please reach us at
+                    <a
+                      class="text-info"
+                      href="http://glyde.com.br/"
+                      target="_blank"
+                      >glyde</a
+                    >
+                  </div>
+                </div>
               </form>
             </div>
           </div>
