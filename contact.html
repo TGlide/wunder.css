@@ -57,12 +57,12 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#"
+              <a class="nav-link" href="about.html"
                 ><i class="bi-three-dots"></i> About</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html"
+              <a class="nav-link active" href="#"
                 ><i class="bi-mailbox"></i> Contact us</a
               >
             </li>
@@ -70,28 +70,47 @@
         </div>
       </nav>
       <div
-        class="flex-fill d-flex flex-row justify-content-around align-items-center"
+        class="flex-fill d-flex flex-row justify-content-around align-items-center w-100"
       >
-        <div class="row w-100">
-          <div class="col">
-            <img
-              class="d-block w-100"
-              src="assets/about.png"
-              alt="A black box, a red box with an eye, and a blue box with a feather"
-            />
-          </div>
-          <div class="col-0 col-md-9 d-flex align-items-center">
-            <p class="fs-2 fw-regular text-left ms-4 my-4">
-              The modern web is filled with an increasing number of new
-              technologies that change the way we create and implement our work.
-              While they certainly help the development ecosystem to move
-              forward, we believe that it's important to keep in mind the
-              <span class="text-danger fw-bolder">wunderful</span> things that
-              pure <span class="text-info fw-light">CSS</span> can achieve,
-              without needing to overengineer new solutions a lot of the time. A
-              lightweight, fast, and amazing web is better for everyone, and we
-              should strive for it, together.
-            </p>
+        <div class="row w-100 d-flex justify-content-center">
+          <div class="col-12 col-lg-8">
+            <div class="card bg-dark text-white shadow-lg w-100 p-4">
+              <form>
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Jane Doe"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    aria-describedby="emailHelp"
+                    placeholder="jane.doe@gmail.com"
+                  />
+                  <div id="emailHelp" class="form-text">
+                    We'll never share your email with anyone else.
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="5"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-danger text-white">
+                  Submit
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
