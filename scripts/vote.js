@@ -4,24 +4,13 @@ function toggleBtn(selector, isLikeBtn) {
 
   const clickedPrev = $(selector).data("clicked");
   const dataPrev = $(selector).data(dataAttribute);
+  const newDataValue = clickedPrev ? dataPrev - 1 : dataPrev + 1;
 
-  if (!clickedPrev) {
-    $(selector).data("clicked", true);
-    $(selector).data(dataAttribute, dataPrev + 1);
-    $(selector).removeClass("text-muted");
-    $(selector).addClass(textClass);
-    $(selector)
-      .next()
-      .text(dataPrev + 1);
-  } else {
-    $(selector).data("clicked", false);
-    $(selector).data(dataAttribute, dataPrev - 1);
-    $(selector).addClass("text-muted");
-    $(selector).removeClass(textClass);
-    $(selector)
-      .next()
-      .text(dataPrev - 1);
-  }
+  $(selector).data("clicked", !clickedPrev);
+  $(selector).data(dataAttribute, newDataValue);
+  $(selector).toggleClass("text-muted");
+  $(selector).toggleClass(textClass);
+  $(selector).next().text(newDataValue);
 }
 
 $(document).ready(function () {
