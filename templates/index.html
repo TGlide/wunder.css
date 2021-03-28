@@ -1,0 +1,117 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block hero %}
+<div
+  class="flex-fill d-flex flex-column justify-content-center align-items-center"
+>
+  <div class="d-flex flex-column justify-content-center">
+    <h1 class="fs-1 fw-regular text-center">
+      Discover <span class="text-danger fw-bold">wunderful</span> web components
+      made with pure
+      <span class="text-info fw-lighter">CSS</span>
+    </h1>
+    <div class="d-flex justify-content-center mt-2">
+      <button
+        type="button"
+        class="btn btn-danger py-0 mb-4 text-white rounded-pill"
+      >
+        <a
+          href="#projects"
+          class="d-block text-white text-decoration-none px-2 py-1"
+        >
+          <i class="bi-arrow-down"></i>
+          View projects
+        </a>
+      </button>
+      <button
+        type="button"
+        class="btn btn-info py-0 mb-4 text-white rounded-pill ms-4"
+      >
+        <a
+          href="about.html"
+          class="d-block text-white text-decoration-none px-2 py-1"
+        >
+          About
+        </a>
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock hero %} 
+
+{% block content %}
+<div class="container pb-5" id="projects">
+  <h2 class="fs-2 mt-5 mb-4">Projects</h2>
+  <div class="row">
+    {% for project in projects %}
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card bg-dark text-white shadow-lg">
+        <img
+          src="{% get_static_prefix %}{{project.image_path}}"
+          class="card-img-top"
+          alt="..."
+          height="240"
+        />
+        <div class="card-body">
+          <h5 class="card-title">
+            <div class="d-flex justify-content-between">
+              <div>
+                {{project.name}}
+                <span class="badge bg-danger text-white">Featured</span>
+              </div>
+              <div>
+                <span
+                  class="text-decoration-none text-muted like-btn"
+                  data-like="{{project.likes}}"
+                >
+                  <i class="bi-hand-thumbs-up"></i>
+                </span>
+                <span class="fs-5 me-2">{{project.likes}}</span>
+                <span
+                  href="#"
+                  class="text-decoration-none text-muted dislike-btn"
+                  data-dislike="{{project.dislikes}}"
+                  data-clicked="false"
+                >
+                  <i class="bi-hand-thumbs-down"></i>
+                </span>
+                <span class="fs-5">{{project.dislikes}}</span>
+              </div>
+            </div>
+          </h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{project.author}}</h6>
+          <a
+            href="{{project.source}}"
+            class="card-link text-info"
+            target="_blank"
+            >Check it out!</a
+          >
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <p class="fs-3 text-center mt-4">More projects coming soon!</p>
+  <div class="progress mt-2">
+    <div
+      class="progress-bar progress-bar-striped bg-danger"
+      role="progressbar"
+      style="width: 20%"
+      aria-valuenow="3"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
+      {{projects|length}}/100 projects (minimum goal)
+    </div>
+  </div>
+  <div class="alert alert-danger text-center mt-4" role="alert">
+    Please submit your projects to us! Thanks :)
+  </div>
+</div>
+{% endblock content %} 
+
+{% block scripts %}
+<script src="{% get_static_prefix %}scripts/vote.js"></script>
+{% endblock scripts %}

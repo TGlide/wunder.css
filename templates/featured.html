@@ -1,0 +1,88 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block hero %}
+  <h2 class="fs-2 mt-5 mb-4">Featured Projects</h2>
+  <div class="row">
+    {% for project in projects %}
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card bg-dark text-white shadow-lg">
+        <img
+          src="{% get_static_prefix %}{{project.image_path}}"
+          class="card-img-top"
+          alt="..."
+          height="240"
+        />
+        <div class="card-body">
+          <h5 class="card-title">
+            <div class="d-flex justify-content-between">
+              <div>
+                {{project.name}}
+                <span class="badge bg-danger text-white">Featured</span>
+              </div>
+              <div>
+                <span
+                  class="text-decoration-none text-muted like-btn"
+                  data-like="{{project.likes}}"
+                >
+                  <i class="bi-hand-thumbs-up"></i>
+                </span>
+                <span class="fs-5 me-2">{{project.likes}}</span>
+                <span
+                  href="#"
+                  class="text-decoration-none text-muted dislike-btn"
+                  data-dislike="{{project.dislikes}}"
+                  data-clicked="false"
+                >
+                  <i class="bi-hand-thumbs-down"></i>
+                </span>
+                <span class="fs-5">{{project.dislikes}}</span>
+              </div>
+            </div>
+          </h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{project.author}}</h6>
+          <a
+            href="{{project.source}}"
+            class="card-link text-info"
+            target="_blank"
+            >Check it out!</a
+          >
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="d-flex justify-content-end mt-4">
+    <nav aria-label="Projects navigation">
+      <ul class="pagination">
+        <li class="page-item">
+          <a
+            class="page-link bg-dark text-white"
+            href="#"
+            aria-label="Previous"
+          >
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link bg-dark text-danger fw-bolder" href="#">1</a>
+        </li>
+        <li class="page-item">
+          <a
+            class="page-link bg-dark text-white"
+            href="#"
+            aria-label="Next"
+          >
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+{% endblock hero %}
+
+{% block scripts %}
+  <script src="scripts/vote.js"></script>
+{% endblock scripts %}
+

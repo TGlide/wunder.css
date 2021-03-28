@@ -1,0 +1,70 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block hero %}
+  <div
+    class="flex-fill d-flex flex-row justify-content-around align-items-center w-100"
+  >
+    <div class="row w-100 d-flex justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="card bg-dark text-white shadow-lg w-100 p-4">
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Jane Doe"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                aria-describedby="emailHelp"
+                placeholder="jane.doe@gmail.com"
+              />
+              <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea
+                class="form-control"
+                id="message"
+                rows="5"
+              ></textarea>
+            </div>
+            <button
+              type="button"
+              class="btn btn-danger text-white"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseExample"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              Submit
+            </button>
+
+            <div class="collapse mt-4" id="collapseExample">
+              <div class="card card-body bg-dark border-white">
+                Our email servers are currently down. Please reach us at
+                <a
+                  class="text-info"
+                  href="http://glyde.com.br/"
+                  target="_blank"
+                  >glyde</a
+                >
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock hero %}

@@ -1,6 +1,0 @@
-- [x] Add 5 components not used on course
-  - [x] Progress
-  - [x] Badge
-  - [x] Pagination
-  - [x] Alert
-  - [x] Collapse

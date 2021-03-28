@@ -1,0 +1,32 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block hero %}
+  <div
+    class="flex-fill d-flex flex-row justify-content-around align-items-center"
+  >
+    <div class="row w-100">
+      <div class="col">
+        <img
+          class="d-block w-100"
+          src="{% get_static_prefix %}images/about.png"
+          alt="A black box, a red box with an eye, and a blue box with a feather"
+        />
+      </div>
+      <div class="col-0 col-md-9 d-flex align-items-center">
+        <p class="fs-2 fw-regular text-left ms-4 my-4">
+          The modern web is filled with an increasing number of new technologies
+          that change the way we create and implement our work. While they
+          certainly help the development ecosystem to move forward, we believe
+          that it's important to keep in mind the
+          <span class="text-danger fw-bolder">wunderful</span> things that pure
+          <span class="text-info fw-light">CSS</span> can achieve, without needing
+          to overengineer new solutions a lot of the time. A lightweight, fast,
+          and amazing web is better for everyone, and we should strive for it,
+          together.
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock hero %}

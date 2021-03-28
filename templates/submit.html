@@ -1,0 +1,150 @@
+{% extends 'base.html' %} 
+
+{% load static %}
+
+{% block hero %}
+  <div
+    class="flex-fill d-flex flex-row justify-content-around align-items-center w-100"
+  >
+    <div class="row w-100 d-flex justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="card bg-dark text-white shadow-lg w-100 p-4">
+          <form id="submit">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Jane Doe"
+              />
+              <div class="invalid-feedback">Please type your name.</div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                aria-describedby="emailHelp"
+                placeholder="jane.doe@gmail.com"
+              />
+              <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div>
+              <div class="invalid-feedback">Please type a valid email.</div>
+            </div>
+            <div class="mb-3">
+              <label for="where" class="form-label"
+                >Where did you hear about Wunder.CSS?</label
+              >
+              <select
+                class="form-select"
+                id="where"
+                aria-label="Where did you hear about Wunder.CSS"
+              >
+                <option selected>Other</option>
+                <option value="friends">Friends</option>
+                <option value="social">Social Media</option>
+                <option value="work">Work</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label"
+                >Where else is this component hosted?</label
+              >
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="hosted[]"
+                  value="codepen"
+                  id="codepenHosted"
+                />
+                <label class="form-check-label" for="codepenHosted">
+                  Codepen
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="hosted[]"
+                  value="github"
+                  id="githubHosted"
+                />
+                <label class="form-check-label" for="githubHosted">
+                  Github
+                </label>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label"
+                >Do you want to receive e-mail notifications?</label
+              >
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="receiveNotifications"
+                  id="receiveNotificationsNo"
+                  checked
+                />
+                <label
+                  class="form-check-label"
+                  for="receiveNotificationsNo"
+                >
+                  Definitely not
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="receiveNotifications"
+                  id="receiveNotificationsYes"
+                />
+                <label
+                  class="form-check-label"
+                  for="receiveNotificationsYes"
+                >
+                  Sure!
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-danger text-white">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="position-fixed top-0 end-0 p-3">
+    <div
+      class="toast"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+    >
+      <div class="toast-header">
+        <span><i class="bi-check fs-4 text-success"></i></span>
+        <strong class="me-auto"> Submission successful</strong>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="toast-body text-dark">
+        Your submission was completed successfully.
+      </div>
+    </div>
+  </div>
+{% endblock hero %}
+
+{% block scripts %}
+  <script src="{% get_static_prefix %}scripts/submit.js"></script>
+{% endblock scripts %}
+
